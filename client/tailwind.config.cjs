@@ -12,6 +12,9 @@ module.exports = {
         'home-heading-small' : ['28px', '34px'],
         'home-heading-large' : ['48px', '56px'],
         'defult' : ['15px', '21px']
+      },
+      gridTemplateColumns: {
+        'auto' : 'repeat(auto-fit, minmax(200px, 1fr))'
       }
     },
   },
