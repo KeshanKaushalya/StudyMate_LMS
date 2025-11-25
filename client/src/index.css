@@ -20,6 +20,17 @@
         font-size: 48px;
         line-height: 56px;
     }
+    /* Course details heading utilities (matches classes used in CourseDetails.jsx) */
+    .text-course-deatails-heading-small {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    @media (min-width: 48rem) {
+        .md\:text-course-deatails-heading-large {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
     @media (min-width: 48rem) {
         .md\:text-home-heading-large { /* md: variant */
             font-size: 48px;
@@ -38,6 +49,10 @@
         .md\:grid-cols-auto {
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
+    }
+    /* .h-section-height is safelist-forced by tailwind.config.cjs and defined here */
+    .h-section-height {
+        height: 500px;
     }
 }
 
