@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
 import { assets } from '../../assets/assets'
+import humanizeDuration from 'humanize-duration'
 
 const CourseDetails = () => {
 
    const {id} = useParams()
 
    const [courseData, setCoursedata] = useState(null)
+   const [openSection, setOpenSection] = useState({})
 
    const {allCourses, calculateRating, calculateChapterTime, calculateCourseDuration, calculateNoOfLectures} = useContext(AppContext)
 
@@ -20,6 +22,14 @@ const CourseDetails = () => {
    useEffect(()=>{
     fetchCourseData()
    },[])
+
+   const toggleSection = ()=>{
+    setOpenSection((prev)=>(
+      {...prev,
+        [index]: !prev[index],
+      }
+    ))
+   }
 
   return courseData ? (
     <>
@@ -60,6 +70,24 @@ const CourseDetails = () => {
                     </div>
                     <p className='text-sm md:text-default'>{chapter.chapterContent.length} lectures - {calculateChapterTime(chapter)}</p>
                   </div>
+
+                  <div className='overflow-hidden transition-all duration-300 max-h-96 '>
+                    <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300'>
+                      {chapter.chapterContent.map((lecture, i)=> (
+                        <li key={i} className='flex items-start gap-2 py-1'>
+                          <img src={assets.play_icon} alt="play icon" className='w-4 h-4 mt-1'/>
+                          <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
+                            <p>{lecture.lectureTitle}</p>
+                            <div className='flex gap-2'>
+                              {lecture.isPreviewFree && <p className='text-blue-500 cursor-pointer'>Preview</p>}
+                              <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ['h', 'm']})}</p>
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
                 </div>
               ))}
            </div>
