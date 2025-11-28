@@ -126,7 +126,7 @@ export const dummyTestimonial = [
 ];
 
 export const dummyDashboardData = {
-    "totalEarnings": 707.38,
+    "totalEarnings": 75000.00,
     "enrolledStudentsData": [
         {
             "courseTitle": "Introduction to JavaScript",
