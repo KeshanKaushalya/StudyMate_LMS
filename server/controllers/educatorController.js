@@ -17,3 +17,21 @@ export const updateRoleToEducator = async (req, res) =>{
         res.json({ success: false, message: error.message })
     }
 }
+
+// Add New Course
+export const addCourse = async (req, res)=>{
+    try {
+        const {  courseData } = req.body
+        const imageFile = req.file 
+        const educatorId = req.auth.userId
+
+        if(!imageFile){
+            return res.json({success: false, message: 'Thumbnail Not Attached'})
+        }
+
+        
+
+    } catch (error) {
+        
+    }
+}
