@@ -42,6 +42,14 @@ import profile_img from './profile_img.png'
 import profile_img2 from './profile_img2.png'
 import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
+import Mlogo1 from './Mlogo1.png'
+import Mlogo2 from './Mlogo2.png'
+import favicon1 from './favicon1.svg'
+import favicon2 from './favicon2.svg'
+import logo1 from './logo1.svg'
+import logo2 from './logo2.svg'
+import logo3 from './logo3.svg'
+import logo4 from './logo4.svg' 
 
 
 export const assets = {
@@ -88,7 +96,15 @@ export const assets = {
     profile_img3,
     play_icon,
     blue_tick_icon,
-    lesson_icon
+    lesson_icon,
+    Mlogo1,
+    Mlogo2,
+    favicon1,
+    favicon2,
+    logo1,
+    logo2,
+    logo3,
+    logo4
 }
 
 export const dummyEducatorData = {
